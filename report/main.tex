@@ -1,0 +1,89 @@
+%ICSE format
+\documentclass[10pt,conference, hidelinks]{IEEEtran}
+%\IEEEoverridecommandlockouts
+% The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
+\usepackage{cite}
+\usepackage{textcomp}
+\usepackage{amsmath, ,amssymb,amsfonts}
+\usepackage{syntax}
+\usepackage{xparse}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{listings}
+\usepackage{xspace}
+\usepackage[hyphens]{url}
+\usepackage{hyperref}
+\usepackage{graphicx}
+
+
+\lstdefinelanguage{yaml}{
+	morekeywords={
+		service, provider, plugins, functions, name,
+		runtime, handler, events, x-azure-settings, 
+		http, authLevel, hello
+	},
+	sensitive=true
+}
+
+%settings for listings
+
+\lstset{ 
+	basicstyle=\fontsize{8.1}{8.6}\fontfamily{fvm}\selectfont,
+	keywordstyle=\bfseries\color{Sepia},
+	numberstyle=\tiny,
+	basewidth=0.59em,
+	showstringspaces=false,
+	xleftmargin=\parindent,
+	%xrightmargin=-0.5cm,
+	numbersep=1em,
+	numbers=left,
+	%  numberblanklines=false,
+	escapechar=§,
+	escapeinside={(*@}{@*)},
+	% Next lines are added for Jsgx.
+	language=yaml,
+	alsoletter=-,
+	moredelim=[il][\textcolor{RawSienna}]{$$},
+	tabsize=1
+}
+
+
+\begin{document}
+
+\input{definitions}
+
+\title{Wonderless: A Dataset to Shed Light upon Serverless Computing}
+
+\author{\IEEEauthorblockN{Nafise Eskandani}
+	\IEEEauthorblockA{\textit{Technische Universit\"at Darmstadt} \\
+		Germany\\
+	n.eskandani@cs.tu-darmstadt.de}
+	\and
+\IEEEauthorblockN{Guido Salvaneschi}
+	\IEEEauthorblockA{\textit{University of St.Gallen}\\
+		Switzerland\\
+	guido.salvaneschi@unisg.ch}}
+
+\maketitle
+
+\begin{abstract}
+\input{sections/abstract}
+\end{abstract}
+
+
+\begin{IEEEkeywords}
+	\faas, Function as a Service, Serverless, Cloud Computing
+\end{IEEEkeywords}
+
+\input{sections/introduction}
+\input{sections/dataset}
+\input{sections/schema}
+\input{sections/limitations}
+\input{sections/usecase}
+\input{sections/relatedwork}
+\input{sections/conclusion}
+
+\bibliographystyle{ieeetran}
+\bibliography{main}
+
+
+\end{document}
