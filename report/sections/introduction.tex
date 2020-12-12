@@ -1,6 +1,8 @@
+% !TEX root = ../main.tex
+
 \section{Introduction}
 
-Since the arrival of Serverless computing with an event-based \faas model in 2014 by 
+Since the advent of Serverless computing with an event-based \faas model in 2014 by 
 Amazon,
 % \footnote{\url{https://aws.amazon.com/lambda/}}, 
 all the major cloud service providers including 
@@ -10,60 +12,97 @@ Microsoft,
 %\footnote{\url{https://azure.microsoft.com/services/functions/}}, 
 and IBM
 %\footnote{\url{https://cloud.ibm.com/functions/}}
-are offering equivalent services. 
+introduced equivalent services. 
 %
-In addition to these offerings, a growing number of open-source platforms 
+In addition to these offers, a growing number of open-source platforms 
 such as Apache OpenWhisk,
 %\footnote{\url{https://openwhisk.apache.org}}, 
 OpenFaas,
 %\footnote{ \url{https://www.openfaas.com}}, 
 and Kubeless
 %\footnote{\url{https://kubeless.io}} 
-with the \faas programming model are being actively developed and maintained.
+supporting the \faas programming model are being actively developed and maintained.
 
-In contrast to traditional cloud offerings that users explicitly provision or configure 
-backend services, in \faas, the infrastructure becomes the provider's burden.
-This enables users to concentrate on the functionality of their programs 
-without having to be concerned with maintenance issues. 
-Users can develop a Serverless application only by uploading the code of their 
-functions to the cloud and selecting trigger events~(e.g., a REST request, 
-a file upload). The provider is then responsible for the deployment of the 
-application and provisioning resources. Consequently, the user only has 
-to pay for the active resources that the application uses, eliminating the 
-need to pay for idle components of the application.
+In contrast to the traditional cloud, where users explicitly provision or configure 
+backend services, in \faas infrastructure management is left to the provider.
+With this approach enables focus on the functionalities of their programs 
+and do not need to be concerned about infrastructure. 
+Users can develop a Serverless application by uploading the code of their 
+functions to the cloud provides and by selecting trigger events~(e.g., a REST request, 
+a file upload) that activate the application. The cloud provider is then responsible for the deployment 
+and for resource provisioning. As a consequence, the user only has 
+to pay for the active resources that the application requires -- eliminating the 
+need for over-provisioning to be ready for peak load.
 
-Even though the current \faas model simplifies users' tasks by providing 
-them an environment to focus on developing applications in high-level 
-languages, it also proposes several challenges on the development 
-and performance of such applications. One of the main challenges 
-that dramatically reduces the overall performance and utility of 
-Serverless applications is that programs require to be 
-stateless\cite{hellerstein2018serverless}.
-Due to the autoscaling nature of Serverless applications, the state of 
-a function is not preserved through the execution. This along with the
-possibility that different functions of an application may not execute 
-on the same machine force developers to use external shared 
-storage systems for exchanging intermediate data\cite{klimovic2018understanding}.
-Needless to say that using the external storage systems make the 
+Even though the \faas model simplifies programmers' tasks by providing 
+an environment to focus on developing applications in high-level 
+languages, it also introduces several challenges.
+ %for the development and performance of such applications. 
+
+First, the programming model adopted by developers 
+significantly departs from the well known imperative and functional paradigms.
+A number of constraints contribute to that.
+Similar to functional programming, in the Serverless model, 
+programs are required to be stateless~\cite{hellerstein2018serverless} to enable autoscaling.
+However, function composition, which is the cornerstone of functional programming
+is often considered an antipattern~\cite{TODO}.
+%
+As a result, developers resort to a programming model that 
+resembles the imperative paradigm and routines --
+for example using external shared 
+storage systems to save intermediate data~\cite{klimovic2018understanding}.
+Yet, there are fundamental differences, including the fact that 
+the state of a function is not preserved through the executions ands and
+different functions that belong to the same application may not even execute 
+on the same machine.
+
+Second, the performance of Serverless applications is much harder to 
+predict that traditional VM cloud applications. A number of aspects concur to that.
+Some are a consequence of programming practives:
+using the external storage systems make the 
 communication slower and costlier than point-to-point networking.
+Others are inherently due to the characteristics of Serverless systems
+including 
+lack of information on data locality~\cite{DBLP:journals/corr/abs-1902-03383},
+delays caused by the time needed 
+for the container starts~(cold start times)~\cite{manner2018cold}, 
+complex triggering processes~\cite{pelle2019towards}, and
+limited lifetime of functions~\cite{hellerstein2018serverless}, 
 
-This limitation together with the delays caused by the time needed 
-for the container starts~(cold start times)\cite{manner2018cold} or 
-complex triggering processes\cite{pelle2019towards}, 
-limited lifetime of functions\cite{hellerstein2018serverless}, 
-vendor lock-in, and lack of tools for testing and debugging are among 
-the major challenges that slower the adoption of the \faas model. 
+Third, there is a lack of tools for covering various aspects of
+Serverless software development, including testing, debugging 
+and continuous integration. TODO: any more evidence to cite?
+	
+The issues above, exacerbated by the vendor lock-in that is currently 
+characterizing vast amount of the Serverless computing market, 
+pose a the major challenge that slower the adoption of the \faas model. 
 
-The primary requirement to alleviate these challenges is having a 
-deep understanding of Serverless characteristics. However, relatively little is 
-known about the characteristics or behavior of a Serverless application. 
-We believe that this knowledge can be achieved by investigating the use 
-cases of the \faas model in the real-world.
+Unfortunatly, relatively little is known about the characteristics 
+or behavior of real-world Serverless application. Existing studies focus 
+on specific aspects, such as evolution~\cite{spillner2019quantitative} 
+or performance\cite{wang2018peeking,lloyd2018serverless}.
+But do not provide a general-purpose dataset for Serverless computing.
+Other researchers either applied different research methodologies, 
+such as developers interviews and literature surveys~\cite{leitner2019mixed},
+or target a some tens of applications~\cite{eismann2020serverless}.
+A first step to address the challenges above is to achieve a 
+better understanding of how the Serverless model is used in practice. 
 
-In this study, we attempt to fulfill this urgent need of researchers for 
-Serverless data sources by providing a dataset of real-world Serverless 
-applications in GitHub, the home of the largest open-source community. 
-Our dataset, `\emph{Wonderless}', is publicly 
+
+In this work, we bridge this gap by providing a dataset of real-world Serverless 
+applications which is ready to use for researchers who are interested in investigating
+Faas applications. Our dataset, `\emph{Wonderless}', is publicly 
 available\,\footnote{\url{https://github.com}} 
 and the source code\,\footnote{\url{https://github.com}} 
-is open for replication as well as the extension.
+is open for replication as well as for extension.
+
+
+
+
+
+
+
+
+
+
+
