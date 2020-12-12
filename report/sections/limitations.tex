@@ -2,21 +2,40 @@
 \section{threats to Validity}
 \label{limitations}
 
-The main limitation of Wonderless is that it is restricted to the applications 
-that are developed using the $Serverless \; Framework$. As thoroughly 
-described in section\,\ref{phaseA}, $Serverless \; Framework$ is the 
-most popular open-source solution for developing Serverless applications 
-based on the GitHub stars and the results of a prior study\cite{kritikos2018review}. 
+\paragraph{Serverless platform}
+Wonderless is restricted to the applications 
+that are developed using the $Serverless \; Framework$. 
 However, not every developer uses a framework to develop a Serverless application. 
 They may directly use offerings of a provider, or they may use self-hosted solutions. 
+%
+As thoroughly 
+described in section\,\ref{phaseA}, $Serverless \; Framework$ is the 
+most popular open-source solution for developing Serverless applications 
+based on the GitHub stars and the results of a prior study~\cite{kritikos2018review}. 
 We believe that this issue does not significantly impact the characteristics of a 
 Serverless application and consequently, generalization of the dataset.
 
-Moreover, the dataset may not be $\%100$ clean from the toy projects 
+\paragraph{Influence of toy applications}
+The dataset may not be $\%100$ clean from the toy projects 
 because all the steps of constructing the Wonderless are done automatically. 
 For example, if a project is used for teaching or learning Serverless concepts 
 and it has no text or label containing the keywords mentioned in 
-section\,\ref{phaseB}, the related repository is remained in the dataset.
+section\,\ref{phaseB}, the related repository is in the dataset.
+
+TODO: How did we mitigate this threat to validity?
+
+\paragraph{GitHub}
+What is the risk of using only GitHub?
+
+How did we mitigate it?
+
+\paragraph{Industrial closed-source applications}
+We consider only applications that are publicly available...
+
+
+
+
+
 
 
 
