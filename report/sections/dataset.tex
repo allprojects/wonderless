@@ -89,12 +89,16 @@ functions:
 \vspace{2mm}
 
 We used GitHub API to search for all the $serverless.yml$ files in GitHub. 
-Since GitHub API has a limitation of $1000$ results per query, we structured 
+Since the GitHub API has a limitation of $1000$ results per query, we structured 
 the query into subqueries based on the size of a file. 
 Due to this, we searched for all the $serverless.yml$ files that are larger 
 than $0.5\,KB$ and smaller than $10\,KB$. The files with less than 
 $0.5\,KB$ are mostly empty, and there are barely such files that are 
-larger than $10\,KB$. As the result of our search on July 29, 2020, 
+larger than $10\,KB$. 
+
+TODO: limiting to 10K seems strange...
+
+As the result of our search on July 29, 2020, 
 we collected the URL of $43,164$ unique files, corresponded to 
 $30,489$ unique repositories. Using the URLs, we cloned 
 the repositories to create the initial version of the dataset that 
@@ -140,7 +144,8 @@ This step dramatically reduced the size of the dataset.
 \begin{figure}
 	\centering
 	\includegraphics[scale=0.25]{figures/lifetime}
-	\caption{Distribution of lifetime of the Serverless applications.}
+	\caption{Distribution of lifetime of the Serverless applications. 
+	TODO: this seems a result on the dataset, should we integrate it with fig 1? Let's talk}
 	\label{fig:lifetime}
 \end{figure}
 
