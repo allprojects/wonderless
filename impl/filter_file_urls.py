@@ -4,7 +4,14 @@ import csv
 
 # change the format of the file to csv
 def txt_to_csv(txt_file, csv_file):
-    df = pd.read_fwf(txt_file)
+    with open(txt_file, 'r') as in_file:
+        with open('help.txt', 'w') as text_file:
+            for line in in_file:
+                if ' ' in line:
+                    line = line.replace(' ', '\n')
+                text_file.write(line)
+
+    df = pd.read_fwf('help.txt')
     df.to_csv(csv_file)
 
 
@@ -19,9 +26,10 @@ def filter_urls(file_urls, filtered_file_urls):
 
     with open(file_urls, newline='') as csvfile:
         reader = csv.reader(csvfile)
-        next(reader, None)
         for row in reader:
             if any(c in row[1].lower() for c in remove):
+                continue
+            elif not row[1].rstrip().endswith('serverless.yml'):
                 continue
             else:
                 wtr.writerow([row[1]])
