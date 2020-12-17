@@ -25,12 +25,12 @@ supporting the \faas programming model are being actively developed and maintain
 
 In contrast to the traditional cloud, where users explicitly provision or configure 
 backend services, in \faas infrastructure management is left to the provider.
-With this approach enables focus on the functionalities of their programs 
-and do not need to be concerned about infrastructure. 
+This approach enables developers to focus on the functionalities of their programs 
+without needing to be concerned about infrastructure. 
 Users can develop a Serverless application by uploading the code of their 
-functions to the cloud provides and by selecting trigger events~(e.g., a REST request, 
-a file upload) that activate the application. The cloud provider is then responsible for the deployment 
-and for resource provisioning. As a consequence, the user only has 
+functions to the cloud providers and selecting trigger events~(e.g., a REST request, 
+a file upload) that activate the application. The cloud provider is then responsible for 
+the deployment and resource provisioning. As a consequence, the user only has 
 to pay for the active resources that the application requires -- eliminating the 
 need for over-provisioning to be ready for peak load.
 
@@ -45,19 +45,19 @@ A number of constraints contribute to that.
 Similar to functional programming, in the Serverless model, 
 programs are required to be stateless~\cite{hellerstein2018serverless} to enable autoscaling.
 However, function composition, which is the cornerstone of functional programming
-is often considered an antipattern~\cite{TODO}.
+is often considered an antipattern~\cite{baldini2017serverless}.
 %
 As a result, developers resort to a programming model that 
 resembles the imperative paradigm and routines --
 for example using external shared 
 storage systems to save intermediate data~\cite{klimovic2018understanding}.
 Yet, there are fundamental differences, including the fact that 
-the state of a function is not preserved through the executions ands and
+the state of a function is not preserved through the executions and
 different functions that belong to the same application may not even execute 
 on the same machine.
 
 Second, the performance of Serverless applications is much harder to 
-predict that traditional VM cloud applications. A number of aspects concur to that.
+predict than traditional VM cloud applications. A number of aspects concur to that.
 Some are a consequence of programming practives:
 using the external storage systems make the 
 communication slower and costlier than point-to-point networking.
@@ -71,14 +71,14 @@ limited lifetime of functions~\cite{hellerstein2018serverless},
 
 Third, there is a lack of tools for covering various aspects of
 Serverless software development, including testing, debugging 
-and continuous integration. TODO: any more evidence to cite?
+and continuous integration\cite{lenarduzzi2020serverless}.
 	
 The issues above, exacerbated by the vendor lock-in that is currently 
 characterizing vast amount of the Serverless computing market, 
-pose a the major challenge that slower the adoption of the \faas model. 
+pose the major challenge that slower the adoption of the \faas model. 
 
 Unfortunatly, relatively little is known about the characteristics 
-or behavior of real-world Serverless application. Existing studies focus 
+or behavior of real-world Serverless applications. Existing studies focus 
 on specific aspects, such as evolution~\cite{spillner2019quantitative} 
 or performance\cite{wang2018peeking,lloyd2018serverless}.
 But do not provide a general-purpose dataset for Serverless computing.

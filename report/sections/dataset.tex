@@ -1,56 +1,23 @@
 \section{Creating the Wonderless}
 \label{dataset}
 
+\begin{figure}
+	\centering
+	\includegraphics[scale=0.55]{figures/processOverview}
+	\caption{Overview of creating Wonderless.}
+	\label{fig:overview}
+\end{figure}
+
+
 Figure\,\ref{fig:overview} summarizes the overall process of constructing Wonderless. 
 The procedure consists of two main phases. 
 We will thoroughly describe each of these phases in the following.
 
-\begin{figure*}
-	\centering
-	\includegraphics[scale=0.55]{figures/msr}
-	\caption{Overview of creating Wonderless. TODO: let's discuss the picture}
-	\label{fig:overview}
-\end{figure*}
+\subsection{Construct the initial dataset} \label{phaseA}
 
-TODO: This section starts by describing how we did -not- create the dataset.
-Should we move those parts to a discussion section?
-I think we need to distinguish the process for achieving the research result and the 
-research result itself.
-
-\subsection{Identify Serverless applications} \label{phaseA}
-The starting point for constructing the Wonderless is identifying Serverless 
-applications. One way to achieve this end is to use services like 
-GHTorrent\cite{gousios2012ghtorrent}, 
-an offline mirror of the GitHub public event timeline, to search for repositories 
-that contain specific keywords in their descriptions, topics, commits or other 
-related attributes. The problem with this method is that containing a keyword 
-does not necessarily guarantee that an application is Serverless. Besides, an 
-application may be Serverless without containing a specific keyword in the 
-attributes of its related repository.
-
-The other way is to use GitHub API to search for a configuration file that is 
-particularly for Serverless applications. The documentation of popular cloud 
-providers reveals that the Serverless configuration file has the same default 
-name as the configuration file for other cloud offerings. 
-For example, one of the default Serverless configuration files in Amazon 
-Web Services\,(AWS) is $index.js$. To this date\footnote{\today}, there 
-are more than $135 \, M$ files with this name in GitHub, and they are not 
-necessarily related to a Serverless application. To make matters worse, 
-searching for this file will limit the dataset to only the applications supported 
-by AWS. To include the Serverless applications provided by other vendors, 
-one requires to search for the specific configuration files of those providers 
-individually. This procedure can lead to a massive dataset with a large number 
-of unrelated data points.
-
-These challenges point to search for a configuration file that is first exclusively 
-for Serverless applications, and second, it has the same default name across 
-different cloud providers and Serverless platforms. 
-$Serverless \; Framework$\footnote{\url{https://www.serverless.com}} 
-with more than 36\,K GitHub stars and 15\,M downloads satisfies both these 
-criteria. According to a review of Serverless frameworks\cite{kritikos2018review}, 
-the $Serverless \; Framework$ with the highest number of supported providers 
-and programming languages, and with the advance deployment, testing, 
-monitoring, and security offerings is the most comprehensive existing framework. 
+To construct the initial dataset of Serverless applications, we chose GitHub projects 
+devloped using $Serverless \; Framework$ as an identification factor. 
+We discuss our reasonings for this decision thoroughly in section\,\ref{discussion}.
 This framework uses a file with the YAML extension named $serverless$ 
 by default as the configuration file, and it allows developers to deploy their 
 applications to a cloud provider like AWS, Microsoft Azure, Google Cloud 
@@ -65,7 +32,7 @@ and type of the event that triggers the function. The $serverless.yml$ file is
 not unique for each application, meaning that an application can have separate
 $serverless.yml$ configuration files for different services.
 
-\vspace{2mm}
+\vspace{1mm}
 
 \begin{lstlisting}[frame=single, caption=An example of a serverless.yml file., label={lst:example}, captionpos=b]
 service: azure-telegram-bot 
@@ -86,7 +53,6 @@ functions:
 			   		authLevel: anonymous
 \end{lstlisting}
 
-\vspace{2mm}
 
 We used GitHub API to search for all the $serverless.yml$ files in GitHub. 
 Since the GitHub API has a limitation of $1000$ results per query, we structured 
@@ -94,13 +60,9 @@ the query into subqueries based on the size of a file.
 Due to this, we searched for all the $serverless.yml$ files that are larger 
 than $0.5\,KB$ and smaller than $10\,KB$. The files with less than 
 $0.5\,KB$ are mostly empty, and there are barely such files that are 
-larger than $10\,KB$. 
-
-TODO: limiting to 10K seems strange...
-
-As the result of our search on July 29, 2020, 
-we collected the URL of $43,164$ unique files, corresponded to 
-$30,489$ unique repositories. Using the URLs, we cloned 
+larger than $10\,KB$. As the result of our search on July 29, 2020, 
+we collected the URL of $41,862$ unique files, corresponded to 
+$30,078$ unique repositories. Using the URLs, we cloned 
 the repositories to create the initial version of the dataset that 
 resulted in $\sim 400 \, GB$ of data.
 
@@ -141,14 +103,6 @@ in the dataset were active for less than a month. Overall, more than $90\%$
 of the project did not have a new commit a year after the initial commit. 
 This step dramatically reduced the size of the dataset.
 
-\begin{figure}
-	\centering
-	\includegraphics[scale=0.25]{figures/lifetime}
-	\caption{Distribution of lifetime of the Serverless applications. 
-	TODO: this seems a result on the dataset, should we integrate it with fig 1? Let's talk}
-	\label{fig:lifetime}
-\end{figure}
-
 To eliminate the projects developed for educational reasons, 
 we applied a keyword search to the labels, topics, and 
 descriptions of repositories. We extracted the description 
@@ -164,7 +118,3 @@ searched for the projects with the same name and different developers.
 Then we manually checked if those repositories were actually the same or 
 they accidentally had the same name. If two repositories were the same, 
 we removed the one with fewer commits or fewer contributors.
-
-We describe the structure of Wonderless in the next section. 
-In section\,\ref{limitations}, we discuss the limitations of our dataset, 
-and we introduce the potential use cases of Wonderless in section\,\ref{usecase}.
