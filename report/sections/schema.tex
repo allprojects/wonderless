@@ -1,25 +1,25 @@
 % !TEX root = ../main.tex
+
 \section{Dataset Schema}
 \label{schema}
 
-All the steps described in section\,\ref{dataset} constructed Wonderless, 
-a dataset to shed light upon Serverless computing consisting of $1,913$
+The steps in Section~\ref{dataset} led to the construction of the
+ Wonderless Serverless computing dataset, consisting of $1,913$
 real-world Serverless applications worthing $44 \, GB$ of data. The dataset 
 is available in the two following formats.
 
-First, a CSV file that contains the URL of each repository. There are two 
-sides to this format; On the positive side, one can clone the latest version 
-of the repositories at any time. On the negative side, the repositories can 
-change access to private, be removed entirely, or drop the services related 
-to Serverless computing over time.
+First, a CSV file that contains the URL of each repository. 
+With this format one can clone the latest version of the repositories any time. 
+On the negative side, the repositories can change access to private, 
+be removed entirely, or drop the services related to Serverless computing 
+over time. To overcome these issues, we provide a snapshot of the 
+repositories taken on November 8, 2020. 
 
-To overcome this downside, we provide a second format, a snapshot of the 
-repositories taken on November 8, 2020. In the snapshot, we cloned each 
-repository to a directory labeled as `$a\_b$' in which `$a$' is the GitHub 
-username of the developer and `$b$' is the name of the repository. 
-We analyzed the $serverless.yml$ configuration files of the repositories 
-to extract the name of the provider of each application. We divided the 
-directories into eight categories\,(AWS, Azure, Google, OpenWhisk, Spotinst, 
-Kubeless, Cloudflare, and Fn) based on the provider of the applications. 
+In the snapshot, each repository is assigned a directory named `$a\_b$' 
+where `$a$' is the GitHub username of the developer and `$b$' is the name of the repository. 
+
+The directories are assigned to eight categories\,(AWS, Azure, Google, OpenWhisk, Spotinst, 
+Kubeless, Cloudflare, and Fn) based on the provider of the applications,
+retrieved from the $serverless.yml$ configuration file. 
 If an application used multiple providers, we placed the repository across 
 all the related groups. 

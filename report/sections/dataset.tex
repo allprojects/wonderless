@@ -1,3 +1,5 @@
+% !TEX root = ../main.tex
+
 \section{Creating the Wonderless}
 \label{dataset}
 
@@ -9,27 +11,26 @@
 \end{figure}
 
 
-Figure\,\ref{fig:overview} summarizes the overall process of constructing Wonderless. 
+Figure\,\ref{fig:overview} summarizes the  process of constructing Wonderless. 
 The procedure consists of two main phases. 
 We will thoroughly describe each of these phases in the following.
 
-\subsection{Construct the initial dataset} \label{phaseA}
+\subsection{Construction of the initial dataset} \label{phaseA}
 
 To construct the initial dataset of Serverless applications, we chose GitHub projects 
-devloped using $Serverless \; Framework$ as an identification factor. 
-We discuss our reasonings for this decision thoroughly in section\,\ref{discussion}.
-This framework uses a file with the YAML extension named $serverless$ 
-by default as the configuration file, and it allows developers to deploy their 
-applications to a cloud provider like AWS, Microsoft Azure, Google Cloud 
+devloped using the {\it Serverless Framework}~\cite{TODO} 
+-- we discuss this decision in section~\ref{discussion}.
+This framework uses a default $serverless.yml$ configuration file, 
+and it allows developers to deploy 
+applications to cloud providers like AWS, Microsoft Azure, Google Cloud 
 Platform, Apache OpenWhisk, Cloudflare Workers, or a Kubernetes-based 
 solution like Kubeless.
 
-Listing\,\ref{lst:example} represents an example of a $serverless.yml$ file. 
-Depending on the chosen provider, this file can have many different properties.
-The example shows the configuration properties for a telegram bot including 
+Listing~\ref{lst:example} is an example of a $serverless.yml$ file. 
+Depending on the provider, this file can list different properties.
+The example shows the configuration properties for a Telegram bot including 
 name of the provider, runtime of the application, name of the function, 
-and type of the event that triggers the function. The $serverless.yml$ file is 
-not unique for each application, meaning that an application can have separate
+and type of the event that triggers the function. 
 $serverless.yml$ configuration files for different services.
 
 \vspace{1mm}
@@ -54,59 +55,70 @@ functions:
 \end{lstlisting}
 
 
-We used GitHub API to search for all the $serverless.yml$ files in GitHub. 
-Since the GitHub API has a limitation of $1000$ results per query, we structured 
-the query into subqueries based on the size of a file. 
-Due to this, we searched for all the $serverless.yml$ files that are larger 
-than $0.5\,KB$ and smaller than $10\,KB$. The files with less than 
-$0.5\,KB$ are mostly empty, and there are barely such files that are 
-larger than $10\,KB$. As the result of our search on July 29, 2020, 
+We used the GitHub API to search for all the $serverless.yml$ files in GitHub. 
+We broke down the query into subqueries based on the size of a file to 
+overcome the limit of $1000$ results per query.
+%Due to this, we searched for all the $serverless.yml$ files that are larger 
+%than $0.5\,KB$ and smaller than $10\,KB$. The files with less than 
+We discarded files smaller than $0.5\,KB$ which are mostly empty.
+% and there are barely such files that are 
+%larger than $10\,KB$. 
+As the result of our search on July 29, 2020, 
 we collected the URL of $41,862$ unique files, corresponded to 
-$30,078$ unique repositories. Using the URLs, we cloned 
-the repositories to create the initial version of the dataset that 
-resulted in $\sim 400 \, GB$ of data.
+$30,078$ repositories. Using the URLs, we cloned 
+the repositories to create the initial version of the dataset 
+resulting in $\sim400 \, GB$ of data.
 
-\subsection{Filter real-world Serverless applications} \label{phaseB}
-The initial dataset included a large number of ineffectual data points 
-such as inactive and toy projects. To end up with real-world Serverless 
-applications, we applied several rounds of filters to the dataset.
+
+
+\subsection{Real-world Serverless applications} \label{phaseB}
+The initial dataset includes a number of spurious data points 
+such as inactive and toy projects. We then applied several rounds 
+of filtering to the dataset.
 
 As the first step to elude bias in the dataset, we checked the developers 
-of applications and removed a repository if the repository was developed 
+of the applications and removed a repository if the repository was developed 
 by the $Serverless \; Framework$ community. 
 
 Next, we looked into the structure of the repositories. 
-For avoiding unstable applications, we removed a repository if it was not 
-on the main branch. In addition, to remove the applications that served 
-presentation purposes, we removed a repository if the configuration file 
+To avoid unstable applications, we removed a repository if it was not 
+on the main branch. 
+TODO: not sure I understand the main branch thing.
+In addition, to remove the applications that served 
+just as showcases, we removed a repository if the configuration file 
 of the repository was placed in a directory that contained one of the 
 \emph{example}, \emph{demo}, \emph{template}, or \emph{test} 
 keywords in its label.
 
-Then, we used a python script to make an initial analysis of the 
-configuration files. We looked for the results of three metrics in this 
-analysis: \rom{1}) if the configuration file is executable, \rom{2}) if 
+Then, 
+%we used a python script to make an initial analysis of the 
+%configuration files. We looked for the results of three metrics in this 
+%analysis: 
+we considered \rom{1}) if the configuration file is executable, \rom{2}) if 
 the configuration file has the name of the provider property and 
 \rom{3}) if the configuration file contains the information for any 
-function. We removed a repository if its configuration file was not 
-executable, had no particular provider, or had no specified function.
-
+function. We removed a repository when the configuration file
+does not meet any of these criteria. 
+% if its configuration file was not 
+% executable, had no particular provider, or had no specified function.
+%
 By the end of this step, the dataset had $371 \, GB$ of data consisting 
-of $27,812$ unique repositories. To eliminate inactive projects, we 
-removed a repository if the lifetime of the repository was less than 
-a year. We used $git \; log$ to view the commit history of repositories. 
-For each repository, we defined the lifetime of the project as the difference 
-between the date of the last commit and the date of the first commit. 
-Figure\,\ref{fig:lifetime} demonstrates the distribution of lifetime of the 
-projects in the dataset. As it is shown, more than $70\%$ of the projects 
-in the dataset were active for less than a month. Overall, more than $90\%$ 
-of the project did not have a new commit a year after the initial commit. 
-This step dramatically reduced the size of the dataset.
+of $27,812$ unique repositories. 
+
+To eliminate inactive projects, we removed a repositories with a lifetime 
+(difference between the date of the last commit and the date of the first commit)
+less than a year. 
+% We used $git \; log$ to view the commit history of repositories. 
+Figure~\ref{fig:lifetime} demonstrates the lifetime distribution of the 
+projects in the dataset: more than $70\%$ of the projects 
+were active for less than a month. Overall, more than $90\%$ 
+of the project did not have a new commit a year after the initial one. 
+This step dramatically reduced the size of the dataset to TODO...
 
 To eliminate the projects developed for educational reasons, 
 we applied a keyword search to the labels, topics, and 
 descriptions of repositories. We extracted the description 
-and topics of each repository using $mercy-preview$ media 
+and topics of each repository using the $mercy-preview$ media 
 type of GitHub API previews. We removed a repository 
 if the repository contained one of the following keywords: 
 \emph{example, demo, tutorial, playground, learn, teach, exercise, 
@@ -118,3 +130,8 @@ searched for the projects with the same name and different developers.
 Then we manually checked if those repositories were actually the same or 
 they accidentally had the same name. If two repositories were the same, 
 we removed the one with fewer commits or fewer contributors.
+
+
+
+
+

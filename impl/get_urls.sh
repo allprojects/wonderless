@@ -4,7 +4,7 @@
 url="https://api.github.com"
 
 # set token to your GitHub access token (public access)
-token="your_token"
+token="4140e8459f083a8c580031c53241713b36b81668"
 
 today=$(date +"%Y-%m-%d")
 
