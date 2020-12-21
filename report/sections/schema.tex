@@ -5,19 +5,18 @@
 
 The steps in Section~\ref{dataset} led to the construction of the
  Wonderless Serverless computing dataset, consisting of $1,913$
-real-world Serverless applications worthing $44 \, GB$ of data. The dataset 
-is available in the two following formats.
+real-world Serverless applications worthing $44 \, GB$ of data. 
 
 First, a CSV file that contains the URL of each repository. 
 With this format one can clone the latest version of the repositories any time. 
 On the negative side, the repositories can change access to private, 
 be removed entirely, or drop the services related to Serverless computing 
-over time. To overcome these issues, we provide a snapshot of the 
-repositories taken on November 8, 2020. 
+over time. 
 
+To overcome these issues, we provide a snapshot of the 
+repositories taken on November 8, 2020. 
 In the snapshot, each repository is assigned a directory named `$a\_b$' 
 where `$a$' is the GitHub username of the developer and `$b$' is the name of the repository. 
-
 The directories are assigned to eight categories\,(AWS, Azure, Google, OpenWhisk, Spotinst, 
 Kubeless, Cloudflare, and Fn) based on the provider of the applications,
 retrieved from the $serverless.yml$ configuration file. 

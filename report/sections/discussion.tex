@@ -1,32 +1,32 @@
 % !TEX root = ../main.tex
+
 \section{Discussion}
 \label{discussion}
+
+\paragraph{identifying Serverless applications}
 The starting point for constructing the Wonderless is identifying Serverless 
-applications. One way to achieve this end is to use services like 
-GHTorrent\cite{gousios2012ghtorrent}, 
+applications. We discuss two alternatives to our approach.
+
+First, one use services like GHTorrent\cite{gousios2012ghtorrent}, 
 an offline mirror of the GitHub public event timeline, to search for repositories 
 that contain specific keywords in their descriptions, topics, commits or other 
-related attributes. The problem with this method is that containing a keyword 
-does not necessarily guarantee that an application is Serverless. Besides, an 
-application may be Serverless without containing a specific keyword in the 
-attributes of its related repository.
+related attributes. However, the presence of a keyword does not guarantee 
+that an application is Serverless. Analogously, an application may be Serverless 
+without containing a specific keyword in the repository attributes.
 
-The other way is to use GitHub API to search for a configuration file that is 
-particularly for Serverless applications. The documentation of popular cloud 
-providers reveals that the Serverless configuration file has the same default 
-name as the configuration file for other cloud offerings. 
+Second, one can use the GitHub API to search for a configuration file that is 
+specific to Serverless applications. Unfortunately, to consider several vendors. 
+one needs to find specific configuration files for each provider.
+Worse, the serverless configuration files are hardly distinguishable from other cloud setups. 
 For example, one of the default Serverless configuration files in Amazon 
-Web Services\,(AWS) is $index.js$. To this date\footnote{\today}, there 
-are more than $135 \, M$ files with this name in GitHub, and they are not 
-necessarily related to a Serverless application. To make matters worse, 
-searching for this file will limit the dataset to only the applications supported 
-by AWS. To include the Serverless applications provided by other vendors, 
-one requires to search for the specific configuration files of those providers 
-individually. This procedure can lead to a massive dataset with a large number 
-of unrelated data points.
+Web Services\,(AWS) is $index.js$. To date\footnote{\today}, 
+more than $135 \, M$ files with this name are on GitHub, most not 
+related to Serverless applications. 
+% This procedure can lead to a massive dataset with a large number 
+% of unrelated data points.
 
-These challenges point to search for a configuration file that is first exclusively 
-for Serverless applications, and second, it has the same default name across 
+In our approach, instead, we rely on a configuration file that is exclusively 
+for Serverless applications, and has the same default name across 
 different cloud providers and Serverless platforms. 
 $Serverless \; Framework$\footnote{\url{https://www.serverless.com}} 
 with more than 36\,K GitHub stars and 15\,M downloads satisfies both these 
@@ -34,3 +34,12 @@ criteria. According to a review of Serverless frameworks\cite{kritikos2018review
 the $Serverless \; Framework$ with the highest number of supported providers 
 and programming languages, and with the advance deployment, testing, 
 monitoring, and security offerings is the most comprehensive existing framework. 
+
+
+
+
+
+
+
+
+
