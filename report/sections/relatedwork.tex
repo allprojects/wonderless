@@ -1,3 +1,5 @@
+% !TEX root = ../main.tex
+
 \section{Related Work}
 \label{relatedwork}
 
@@ -9,7 +11,7 @@ Pavlov et al.\cite{pavlov2019serverless}. The initial dataset was extracted
 from GitHub using GHTorrent based on keyword search and repositories' 
 creation date. Eismann et al. applied several additional filters to this dataset 
 to take out active and real-world Serverless applications resulting in only $32$
-projects.These filters are based on the number of files, commits, 
+projects. These filters are based on the number of files, commits, 
 contributors, and watchers of the projects, along with the manual walks 
 through the repositories. Wonderless extends and complements 
 this dataset by adding a large number of Serverless applications that 
@@ -20,60 +22,52 @@ applications. However, it is bounded to AWS by only containing the
 applications provided by AWS and the applications developed by 
 AWS verified authors.
 
-\subsection{Related use cases}
-With the increasing popularity of \faas platforms and Serverless applications, 
-we are observing more and more studies on a broad range of topics in 
-Serverless computing from both academia and industry. Wonderless can 
-be used in most of these studies as a data source for characteristic recognition, 
-trend identification, evolution investigation, and performance evaluation.
 
-\emph{Recognize Serverless characteristics.}
-Eismann et al.\cite{eismann2020serverless} attempt to address the following 
+\subsection{Studies on Serverless computing}
+
+With the increasing popularity of \faas platforms and Serverless applications, 
+more and more studies have been conducted on a broad range of topics in 
+Serverless computing. 
+
+%\emph{Recognize Serverless characteristics.}
+Eismann et al.~\cite{eismann2020serverless} address the following 
 three main questions to clarify the current picture of Serverless computing: 
 why do so many companies adopt serverless?, when are serverless applications 
-well suited?, and how are serverless applications currently implemented?. For this 
-purpose, they analyze 89 Serverless applications from open-source projects, 
-industrial sources, academic literature, and scientific computing. We discuss 
-the data source for this study in section\,\ref{relatedwork}. Wonderless with 
-$1,913$ data points can be used to complement such studies on a more 
-comprehensive and larger scale.
+well suited?, and how are serverless applications currently implemented? 
+The authors analyze 89 Serverless applications from open-source projects, 
+industrial sources, academic literature, and scientific computing. 
 
-\emph{Identify trends in Serverless development.}
-Leitner et al.\cite{leitner2019mixed} present the results of a mixed-method 
+
+Leitner et al.~\cite{leitner2019mixed} present the results of a mixed-method 
 study consisting of interviews, a literature review, and a Web-based survey 
 to identify best practices for building Serverless applications. 
-They collect the data based on the programmer's experience while 
-developing the application. Wonderless can be used to validate the 
-results of this study from a technical point of view and in the code-level.
+The authors collect the data based on the programmer's experience while 
+developing the application. 
 
-\emph{Investigate the evolution of Serverless platforms.}
-Spillner\cite{spillner2019quantitative} investigates the high-level 
-implementation statistics and evolution of Lambda functions through the 
-Amazon Web Services Serverless Application Repository\,
+%\emph{Investigate the evolution of Serverless platforms.}
+Spillner~\cite{spillner2019quantitative} investigates the 
+evolution of Lambda functions through the Amazon Web Services 
+Serverless Application Repository
 (AWS SAR)\footnote{\url{https://aws.amazon.com/serverless/serverlessrepo/}}. 
-Wonderless with the feature of having real-world applications from
-providers other than AWS, enables researchers to replicate a similar 
-study related to those providers and platforms.
+TODO: say something more about the methodology
 
-\emph{Serverless cost and performance evaluations.} 
-Several studies\cite{wang2018peeking, 
-	lloyd2018serverless, figiela2018performance, lee2018evaluation, 
-	mcgrath2017serverless, back2018using, mohanty2018evaluation} 
+
+Several studies~\cite{wang2018peeking,lloyd2018serverless,figiela2018performance,lee2018evaluation,mcgrath2017serverless,back2018using,mohanty2018evaluation} 
 have evaluated the performance of popular \faas solutions by running 
-benchmark functions across different platforms. The metrics for these 
-evaluations cover a wide range, including computing, memory, network, and 
-I/O parameters. Another class of studies investigates the cost of \faas platforms 
-based on different utilization metrics. Work in \cite{adzic2017serverless} 
-presents how adopting Lambda deployment architecture reduces hosting costs 
-by studying the migration of two industrial cases of early adopters.
-Jackson and Clynch\cite{jackson2018investigation} study the impact of 
+benchmark functions across different platforms. The metrics include time, 
+memory, network, and I/O. Another class of studies investigates the cost of \faas platforms 
+based on different utilization metrics. Lenarduzzi and Panichella~\cite{adzic2017serverless} 
+study the migration of two industrial cases of early adopters
+and show how Lambda deployment architectures reduces hosting costs. 
+Jackson and Clynch~\cite{jackson2018investigation} study the impact of 
 language runtime on the cost of Serverless functions in AWS Lambda and 
-Azure Functions. In \cite{bortolini2019investigating}, Bortolini and Obelheiro 
+Azure Functions. Bortolini and Obelheiro~\cite{bortolini2019investigating} 
 investigate the cost variations within and across \faas platforms 
-based on the choice of memory allocation, \faas provider, and 
-programming language. Wonderless with the feature of spanning across 
-all the popular vendors and platforms, provides valid case studies for 
-these classes of studies.
+based on memory allocation, \faas provider, and 
+programming language. 
+% Wonderless with the feature of spanning across 
+% all the popular vendors and platforms, provides valid case studies for 
+% these classes of studies.
 
 
 
