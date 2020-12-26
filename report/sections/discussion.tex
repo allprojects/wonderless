@@ -31,7 +31,9 @@ different cloud providers and Serverless platforms.
 $Serverless \; Framework$\footnote{\url{https://www.serverless.com}} 
 with more than 36\,K GitHub stars and 15\,M downloads satisfies both these 
 criteria. According to a review of Serverless frameworks\cite{kritikos2018review}, 
-the $Serverless \; Framework$ with the highest number of supported providers 
+the $Serverless \; Framework$ 
+TODO: why in math mode?
+with the highest number of supported providers 
 and programming languages, and with the advance deployment, testing, 
 monitoring, and security offerings is the most comprehensive existing framework. 
 
@@ -40,7 +42,27 @@ monitoring, and security offerings is the most comprehensive existing framework.
 We envision using Wonderless in future studies as a data source for characteristic recognition, 
 trend identification, evolution investigation, and performance evaluation.
 
-First, Wonderless, with $1,913$ data points, can be used to extend existing 
+First, Wonderless can be used to study several aspects that so far have't
+been considered or have been only marginally touched by researchers, 
+including security of serverless applications and continuous integration.
+TODO: say that to the best of our knowledge there is nothing about security.
+Is it true?
+%
+Other areas would benefit from a large dataset to test new techniques.
+Recently, Rahman et al.~\cite{DBLP:journals/ese/RahmanFW20} developed a 
+catalogue of antipatterns for Infrastructure as Code. We believe that an analogous 
+study would be greatly beneficial in the context of serverless software.
+Similarly, Obetz et al. have proposed a novel static analysis technique that is  
+specific to serverless computing and they demonstrated it on 
+seven serverless applications~\cite{10.5555/3357034.3357059}.
+%
+Second, as Wonderless includes the full history of each serverless application, 
+it give the opportunity to developers to study how serverless computing 
+project evolve over time.
+TODO: cite recent studies on commits in github. It would be interesting to compare the 
+results with analogous studies in Wonderless.
+%
+Finally, Wonderless, with $1,913$ data points, can be used to extend existing 
 studies along several dimensions. Concerning number of applications,
 studies that have focused on datasets in the order of tens of 
 applications~\cite{eismann2020serverless} can be extended to a much larger scale.
@@ -50,15 +72,7 @@ serverless applications~\cite{leitner2019mixed}.
 Along the technology exes, since Wonderless does not focus on a specific vendor, it can be used
 to discover whether existing analyses carried out for one vendor
 generalize to others~\cite{spillner2019quantitative}.
-%
-Second, as Wonderless includes the full history of each serverless application, 
-it give the opportunity to developers to study how serverless computing 
-project evolve over time.
-%
-Finally, Wonderless can be used to study several aspects that so far have't
-been considered or have been only marginally touched by researchers, 
-including security of serverless applications, continuous integration and
-static analysis techniques.
+
 
 
 
