@@ -2,7 +2,6 @@ Project URLs
 https://github.com/corinja/serverless-starter-mirror
 https://github.com/valscion/dissobot
 https://github.com/3box/3box-graphql
-https://github.com/epsagon/epsagon-node
 https://github.com/alex-bu-89/auslaenderbehoerde-termin
 https://github.com/execonline-inc/bitmovin-thumbnail-image-lambda
 https://github.com/dslemay/quote-notes
@@ -71,7 +70,6 @@ https://github.com/d3netxer/api-display-google-sheet
 https://github.com/PengWang0316/KairoScope-Backend-Unattached-Journal
 https://github.com/orangecola/mtg-price
 https://github.com/emilioschepis/qr-sync-telegram-bot
-https://github.com/bachya/smart-home
 https://github.com/kfigiela/cloud-functions
 https://github.com/gregstewart/Teacup-In-A-Storm
 https://github.com/ridi/select-frontend
@@ -109,7 +107,6 @@ https://github.com/BrunoSette/CodeBuddieBackEnd
 https://github.com/millergd/CraigslistBots
 https://github.com/jmickey/slack-health-bot
 https://github.com/YukiYonekura/serverless-typescript-boilerplate
-https://github.com/nordcloud/serverless-kms-secrets
 https://github.com/fredagsdeploy/hashtag-lunch-reviews
 https://github.com/balassy/camview
 https://github.com/laws-africa/gazettemachine-worker
@@ -130,7 +127,6 @@ https://github.com/christinning/qos-fixtures
 https://github.com/mya-ake/nuxt-on-lambda
 https://github.com/patrickbrandt/wpb.is
 https://github.com/himanshumuj2050/Coupon-Code-Management-Nodejs-Serverless
-https://github.com/eventuate-clients/eventuate-aws-gateway-serverless-plugin
 https://github.com/totallymoney/TodaysAbsences
 https://github.com/lynnaloo/adoptable-pet-bot
 https://github.com/cadesalaberry/swipe.me
@@ -189,7 +185,6 @@ https://github.com/pandeysoni/authorizer-with-API-Gateway
 https://github.com/DavidCain/bibliophile
 https://github.com/kkuchta/aws_markov
 https://github.com/emenendez/tamcounter
-https://github.com/teddy-gustiaux/serverless-confirm-command
 https://github.com/AnomalyInnovations/serverless-nodejs-starter
 https://github.com/C-Saunders/comment-when-done
 https://github.com/matthewberryman/brunsviga
@@ -310,7 +305,6 @@ https://github.com/20minutes/serverless-github-check
 https://github.com/tophat/serverless-slack-invite
 https://github.com/cdave1/palette-api
 https://github.com/juhi24/gubot
-https://github.com/DataDog/datadog-lambda-layer-python
 https://github.com/nigelmathes/worlds-worst-serverless
 https://github.com/VivekBhat/serverless-nodejs-dynamodb-rest-api
 https://github.com/ivanoats/SeattleTide
@@ -341,7 +335,6 @@ https://github.com/msainty/first-half-goal-api
 https://github.com/PacktPublishing/Angular-Projects
 https://github.com/paul-ridgway/serverless-ruby-on-rails
 https://github.com/standard-library/wire-o
-https://github.com/shawnewallace/conways-game-of-llife
 https://github.com/boristane/blog-api
 https://github.com/prayushtatke/python
 https://github.com/uport-project/lambda-sensui
@@ -359,7 +352,6 @@ https://github.com/will14smith/Photography
 https://github.com/akohen/serverless-fun
 https://github.com/uncompiled/alexa-fruit-stand
 https://github.com/klcantrell/ssr-react-swapi
-https://github.com/nordcloud/serverless-plugin-additional-stacks
 https://github.com/aztecrex/serverless-websocket-chat
 https://github.com/CaseyCurry/LucaBadPurchasesApi
 https://github.com/blakedietz/boiler-plate-crud-api
@@ -394,7 +386,6 @@ https://github.com/rudreshgp/CSEM_2017
 https://github.com/popstas/yandex-dialogs-whatis
 https://github.com/spinscale/serverless-owntracks-kotlin
 https://github.com/snaka/skill-tcfm-player
-https://github.com/link2perry/step-function-executor
 https://github.com/CMetrot/TP_OutilDev
 https://github.com/faizanbashir/alexa-cryptocurrency-skill
 https://github.com/jon-fearer/weather
@@ -553,7 +544,6 @@ https://github.com/O3Labs/neo-qrcode-server
 https://github.com/Financial-Times/origami-codedocs
 https://github.com/greenie/alexa-london-train-status
 https://github.com/sourcier/musical-waffle
-https://github.com/localstack/localstack
 https://github.com/dinesh9492/lambdatest
 https://github.com/osu-cascades/habit-loop-server
 https://github.com/hollowverse/hollowverse
@@ -579,7 +569,6 @@ https://github.com/opolis/deployer
 https://github.com/sturman/bus_lviv_bot
 https://github.com/benbrandt/dice-roller
 https://github.com/celerno/ws-chamizo-chat
-https://github.com/aliyun/serverless-aliyun-function-compute
 https://github.com/jadalmiro/AWs
 https://github.com/c-mueller/serverless-doh
 https://github.com/aiell0/prospectbot
@@ -718,7 +707,6 @@ https://github.com/tcreeds/challenger
 https://github.com/prisma-archive/chromeless
 https://github.com/iopipe/iopipe-python
 https://github.com/timatooth/udraw
-https://github.com/yuki-mt/scripts
 https://github.com/episodehunter/episodehunter
 https://github.com/gaerongsalon/mist
 https://github.com/freeCodeCamp/open-api
@@ -758,8 +746,6 @@ https://github.com/rohithpr/homepage
 https://github.com/hellt/pycatj-web
 https://github.com/NYULibraries/slack-commands
 https://github.com/mrstebo/graphql-serverless-boilerplate
-https://github.com/vkkis93/serverless-step-functions-offline
-https://github.com/nordcloud/serverless-tdd-plugin
 https://github.com/jyksnw/aws-elb-le-ssl
 https://github.com/Bersaelor/ARCMS-Backend
 https://github.com/infinityworks/101-Sessions
@@ -922,7 +908,6 @@ https://github.com/SumOfUs/mailing_service
 https://github.com/ejonasson/nuxt-s3-site
 https://github.com/mikegw/sinatra-lambda-typescript-skeleton
 https://github.com/bykof/notar
-https://github.com/FormidableLabs/serverless-jetpack
 https://github.com/legdba/servicebox-nodejs
 https://github.com/biglotteryfund/grants-service
 https://github.com/khilnani/textchart.com
@@ -1003,7 +988,6 @@ https://github.com/lynnaloo/beatlemania
 https://github.com/singnet/snet-marketplace-service
 https://github.com/Twista/github-pr-checker
 https://github.com/cloudreach/aws-lambda-es-cleanup
-https://github.com/lumigo-io/python_tracer
 https://github.com/AndrewFarley/AWS-Automated-Daily-Instance-AMI-Snapshots
 https://github.com/p1ass/emojic.ch
 https://github.com/amits97/amitsn-blog
@@ -1106,12 +1090,10 @@ https://github.com/bytekast/serverless-graal-scala
 https://github.com/joshg111/lambda-cars
 https://github.com/atomaka/punaday-api
 https://github.com/lyrasis/cspace-sas-sync
-https://github.com/temando/serverless-openapi-documentation
 https://github.com/home-assistant/probot-home-assistant
 https://github.com/jeffleus/athlete-svc
 https://github.com/snwinz/ServerlessApplicationTool
 https://github.com/yeonghoey/galpi
-https://github.com/Juholei/bloggo
 https://github.com/rhlsthrm/bittman
 https://github.com/friedemannsommer/website
 https://github.com/geopython/pygeoapi
@@ -1225,7 +1207,6 @@ https://github.com/99xt-incubator/interns-portal
 https://github.com/okayestdeveloper/beerschema
 https://github.com/shalvah/oldtweets.today
 https://github.com/sabio/CosasDeBugDeveloper
-https://github.com/nordcloud/serverless-mocha-plugin
 https://github.com/krppppp/nuxt_lambda
 https://github.com/jhuizy/serverless-typescript-starter
 https://github.com/luketn/compliment-it-api
@@ -1243,7 +1224,6 @@ https://github.com/richsec/RLRemediator
 https://github.com/MindTouch/solid-doodle
 https://github.com/neo-technology/neo4j-graphacademy-api
 https://github.com/SingularData/data-engine
-https://github.com/tsaude/GustieMenu
 https://github.com/conao3/melpa-bot-client.ts
 https://github.com/atyrian/commensal-auth-service
 https://github.com/taylorzr/slack_trail
@@ -1293,7 +1273,6 @@ https://github.com/grycap/cloudtrail-tracker
 https://github.com/sprakash57/serverless-keeper
 https://github.com/mdmyr/JavaPatterns
 https://github.com/vnenkpet/japanese
-https://github.com/webdriverio/webdriverio
 https://github.com/Pod-Point/slack-relay-lambda
 https://github.com/grrr-amsterdam/microservice-decryptor
 https://github.com/Saeris/Scryfall-API
@@ -1314,7 +1293,6 @@ https://github.com/payers1/serverless-experiments
 https://github.com/riyadhalnur/lambda-twitter-blog-hook
 https://github.com/OrchidTechnologies/orchid
 https://github.com/neo4j-contrib/classmarker-integration
-https://github.com/kalarrs/serverless-shared-api-gateway
 https://github.com/koty/hokuto_program_scraper
 https://github.com/o-o-overflow/dc2020q-scoreboard
 https://github.com/umernawaz0301/crud_ops_on_dynamoDB_using_serverless
@@ -1329,7 +1307,6 @@ https://github.com/jameskirkby/serverless-dynamodb-triggers
 https://github.com/Fullscreen/ecs-slack-notifications
 https://github.com/9bic/lambda2pushover
 https://github.com/yoskeoka/gognito
-https://github.com/OlafConijn/AwsOrganizationFormation
 https://github.com/SC5/sns2slack
 https://github.com/dougbanville/serverless-lambda-api
 https://github.com/Kiran01bm/aws-related
@@ -1379,7 +1356,6 @@ https://github.com/phillyfan1138/market_faas
 https://github.com/tdehollain/barelinks
 https://github.com/Hub-of-all-Things/drops-she-functions
 https://github.com/si3mshady/aws_lambda_functions-
-https://github.com/RHoKAustralia/hills-carpal
 https://github.com/fid9/one-d-integration-serverless
 https://github.com/OctopusDeploy/WebDriverTraining
 https://github.com/gin/snowboarder-pow-finder
@@ -1389,7 +1365,6 @@ https://github.com/scottrepreneur/mb-merkle-service
 https://github.com/ocius/website
 https://github.com/kkrunal77/EVA
 https://github.com/Stradivario/gapi-starter-serverless
-https://github.com/nfour/serverless-build-plugin
 https://github.com/ukon1990/wow-auction-helper
 https://github.com/patrickcollins12/REA-Scraper
 https://github.com/vikaskulkarni/myProfile
@@ -1399,7 +1374,6 @@ https://github.com/btoo/btoo-server
 https://github.com/uncompiled/bikelanes.wtf
 https://github.com/dvsa/cvs-tsk-retro-gen-init
 https://github.com/fernando-mc/chameleon-v2
-https://github.com/zillow/hyper-kube-config
 https://github.com/afiorito/Ladder
 https://github.com/benmcp/serverless-boilerplate
 https://github.com/jhawthorn/untappd-slack
@@ -1430,7 +1404,6 @@ https://github.com/cold-start/service-warmer
 https://github.com/juhamust/bitbucket2sns
 https://github.com/snaka/code-pocket
 https://github.com/bholtbholt/static-site-mailer
-https://github.com/aaronsisler/clients.valley-love-farm
 https://github.com/peterheb/bb2codebuild
 https://github.com/Snezzz/OnlineShop
 https://github.com/sekaru/badbook
@@ -1502,8 +1475,6 @@ https://github.com/happyculteur/comb
 https://github.com/JStonevalley/best-wishes-api
 https://github.com/sot528/button2slack
 https://github.com/elchicofrommo/ChicoCode
-https://github.com/tylerreckart/tylerreckart
-https://github.com/StackStorm/serverless-plugin-stackstorm
 https://github.com/ACTtaiwan/frontend-api
 https://github.com/anta-semenov/AI
 https://github.com/y13i/serverless-ts-boilerplate
@@ -1530,7 +1501,6 @@ https://github.com/araines/nest-yale-alarm
 https://github.com/mozilla-iam/gsuite_cloud_users_driver
 https://github.com/fsclyde/sox-hipaa-devops
 https://github.com/mandrewes/server-or-less-sandpit
-https://github.com/oneblink/server-cli
 https://github.com/xmisao/bestgems.org
 https://github.com/dvsa/mes-mi-export-service
 https://github.com/jennyphan/aboutMe
@@ -1570,7 +1540,6 @@ https://github.com/LEscobar-Driver/Code
 https://github.com/levinunnink/serverless-boilerplate
 https://github.com/markusl/kilometrikisa-proxy
 https://github.com/PaulFasola/alexa-skill-lambo
-https://github.com/hansottowirtz/serverless-externals-plugin
 https://github.com/wickett/lambhack
 https://github.com/CityPantry/citypantry-error-plugin
 https://github.com/muralim4242/mihy-repo
@@ -1676,7 +1645,6 @@ https://github.com/dvsa/rsp-token-service
 https://github.com/erezrokah/gitchi
 https://github.com/R-NK/stasisgg-backend
 https://github.com/MaximDevoir/labels-manager
-https://github.com/dbartholomae/middy-middleware-jwt-auth
 https://github.com/marksteele/edge-rewrite
 https://github.com/ecoruh/wombat
 https://github.com/PatNeedham/PennStationNJTransit
@@ -1760,7 +1728,6 @@ https://github.com/vprotsan/v3
 https://github.com/joshglazer/freetimeupdates-react
 https://github.com/EugeneDraitsev/telegram-bot-websockets
 https://github.com/lazopm/garden-api
-https://github.com/oneblink/cli
 https://github.com/ScottBouloutian/sound-sync
 https://github.com/SamanthaChhoeu/PaperBoy
 https://github.com/t2h5/aws-slack
@@ -1901,7 +1868,6 @@ https://github.com/yoshiko-pg/your-name
 https://github.com/twobulls/aws-security-bot
 https://github.com/seek-oss/serverless-haskell
 https://github.com/sanfrancesco/prerendercloud-lambda-edge
-https://github.com/amplify-education/serverless-domain-manager
 https://github.com/LuisPaGarcia/serverless-mysql-promise-api
 https://github.com/wri/glad-raster-analysis-lambda
 https://github.com/AndresUrregoAngel/CBB

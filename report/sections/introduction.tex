@@ -2,7 +2,7 @@
 
 \section{Introduction}
 
-Since the advent of the \faas Serverless computing model in 2014  
+Since the advent of the \faas model for Serverless computing in 2014  
 supported by Amazon,
 % \footnote{\url{https://aws.amazon.com/lambda/}}, 
 all the major cloud service providers, including 
@@ -23,7 +23,7 @@ and Kubeless
 %\footnote{\url{https://kubeless.io}} 
 supporting the \faas programming model are being actively developed and maintained.
 
-In contrast to the traditional cloud, where users explicitly provision or configure 
+In contrast to the traditional cloud offerings where users explicitly provision or configure 
 backend services, in \faas, infrastructure management is left to the provider.
 Thanks to this approach developers focus on the application logic and 
 are not concerned about the infrastructure. 
@@ -39,7 +39,7 @@ Even though the \faas model simplifies programmers' tasks
 as discussed before, it also introduces several challenges.
  %for the development and performance of such applications. 
 
-First, developers are forced to a adopt a programming model that, in practice,
+First, developers are forced to adopt a programming model that, in practice,
 significantly departs from the well known imperative and functional paradigms.
 % A number of aspects contribute to that.
 For example, similar to functional programming, in the Serverless model, 
@@ -60,9 +60,9 @@ executions~\cite{klimovic2018understanding}.
 
 
 Second, the performance of Serverless applications is much harder to 
-predict than traditional VM cloud applications. A number of aspects concur 
+predict than traditional cloud applications. A number of aspects concur 
 to this state fo the things.
-One of the is a consequence of the common programming practice
+One is a consequence of the common programming practice
 of adopting an external storage systems: cross-function communication 
 is slower and costlier than point-to-point networking.
 Other issues are inherently due to the characteristics of Serverless systems,
@@ -73,8 +73,16 @@ limited lifetime of functions~\cite{hellerstein2018serverless}.
 
 Third, there is a lack of tool support for various aspects of
 Serverless software development, including testing, debugging 
-and continuous integration~\cite{lenarduzzi2020serverless}.
-TODO: need to elaborate on this...
+and continuous integration~\cite{lenarduzzi2020serverless, nupponen2020serverless}.
+Like a small monolithic system, a function can be easily debugged 
+and tested through unit tests locally before deployment. 
+However, system-level and integration testing and debugging can 
+be more complicated when more than a single function is involved 
+in the application. In a Serverless application with several functions, 
+most environmental dependencies are only available at runtime, 
+making local integration testing and debugging impossible in 
+some cases~\cite{leitner2019mixed}.
+
 
 The issues above, exacerbated by the vendor lock-in that is currently 
 characterizing vast amount of the Serverless computing market, 
@@ -84,8 +92,8 @@ better understanding of how the Serverless model is used in practice.
 Unfortunately, relatively little is known about the characteristics 
 or behavior of real-world Serverless applications. Existing studies focus 
 on specific aspects, such as evolution~\cite{spillner2019quantitative} 
-or performance\cite{wang2018peeking,lloyd2018serverless}.
-But do not provide a general-purpose dataset for Serverless computing.
+or performance\cite{wang2018peeking,lloyd2018serverless},
+but they do not provide a general-purpose dataset for Serverless computing.
 Other researchers either applied different research methodologies, 
 such as developers interviews and literature surveys~\cite{leitner2019mixed},
 or target a some tens of applications~\cite{eismann2020serverless}.

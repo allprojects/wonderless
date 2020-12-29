@@ -18,7 +18,7 @@ We will thoroughly describe each of these phases in the following.
 \subsection{Construction of the initial dataset} \label{phaseA}
 
 To construct the initial dataset of Serverless applications, we chose GitHub projects 
-devloped using the {\it Serverless Framework}~\cite{TODO} 
+devloped using the $Serverless \; Framework$\footnote{\url{https://www.serverless.com}} 
 -- we discuss this decision in section~\ref{discussion}.
 This framework uses a default $serverless.yml$ configuration file, 
 and it allows developers to deploy 
@@ -31,7 +31,6 @@ Depending on the provider, this file can list different properties.
 The example shows the configuration properties for a Telegram bot including 
 name of the provider, runtime of the application, name of the function, 
 and type of the event that triggers the function. 
-$serverless.yml$ configuration files for different services.
 
 \vspace{1mm}
 
@@ -65,9 +64,9 @@ We discarded files smaller than $0.5\,KB$ which are mostly empty.
 %larger than $10\,KB$. 
 As the result of our search on July 29, 2020, 
 we collected the URL of $41,862$ unique files, corresponded to 
-$30,078$ repositories. Using the URLs, we cloned 
-the repositories to create the initial version of the dataset 
-resulting in $\sim400 \, GB$ of data.
+$30,078$ repositories. Using the URLs, we cloned the main branch 
+of repositories to create the initial version of the dataset resulting 
+in $\sim400 \, GB$ of data.
 
 
 
@@ -78,14 +77,8 @@ of filtering to the dataset.
 
 As the first step to elude bias in the dataset, we checked the developers 
 of the applications and removed a repository if the repository was developed 
-by the $Serverless \; Framework$ community. 
-
-Next, we looked into the structure of the repositories. 
-To avoid unstable applications, we removed a repository if it was not 
-on the main branch. 
-TODO: not sure I understand the main branch thing.
-In addition, to remove the applications that served 
-just as showcases, we removed a repository if the configuration file 
+by the $Serverless \; Framework$ community. Next, to remove the applications 
+that served just as showcases, we removed a repository if the configuration file 
 of the repository was placed in a directory that contained one of the 
 \emph{example}, \emph{demo}, \emph{template}, or \emph{test} 
 keywords in its label.
@@ -109,11 +102,12 @@ To eliminate inactive projects, we removed a repositories with a lifetime
 (difference between the date of the last commit and the date of the first commit)
 less than a year. 
 % We used $git \; log$ to view the commit history of repositories. 
-Figure~\ref{fig:lifetime} demonstrates the lifetime distribution of the 
+Figure~\ref{fig:overview} demonstrates the lifetime distribution of the 
 projects in the dataset: more than $70\%$ of the projects 
 were active for less than a month. Overall, more than $90\%$ 
 of the project did not have a new commit a year after the initial one. 
-This step dramatically reduced the size of the dataset to TODO how much?
+This step dramatically reduced the size of the dataset to $2,364$ 
+repositories.
 
 To eliminate the projects developed for educational reasons, 
 we applied a keyword search to the labels, topics, and 

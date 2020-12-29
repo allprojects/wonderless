@@ -7,7 +7,7 @@
 The starting point for constructing the Wonderless is identifying Serverless 
 applications. We discuss two alternatives to our approach.
 
-First, one use services like GHTorrent\cite{gousios2012ghtorrent}, 
+First, one can use services like GHTorrent\cite{gousios2012ghtorrent}, 
 an offline mirror of the GitHub public event timeline, to search for repositories 
 that contain specific keywords in their descriptions, topics, commits or other 
 related attributes. However, the presence of a keyword does not guarantee 
@@ -15,7 +15,7 @@ that an application is Serverless. Analogously, an application may be Serverless
 without containing a specific keyword in the repository attributes.
 
 Second, one can search for a configuration file that is 
-specific to Serverless applications in the GitHub API. Unfortunately, to consider several vendors. 
+specific to Serverless applications in the GitHub API. Unfortunately, to consider several vendors, 
 one needs to find specific configuration files for each provider.
 Worse, the serverless configuration files are hardly distinguishable from other cloud setups. 
 For example, one of the default Serverless configuration files in Amazon 
@@ -28,11 +28,12 @@ related to Serverless applications.
 In our approach, instead, we rely on a configuration file that is exclusively 
 for Serverless applications, and has the same default name across 
 different cloud providers and Serverless platforms. 
-$Serverless \; Framework$\footnote{\url{https://www.serverless.com}} 
-with more than 36\,K GitHub stars and 15\,M downloads satisfies both these 
-criteria. According to a review of Serverless frameworks\cite{kritikos2018review}, 
-the $Serverless \; Framework$ 
-TODO: why in math mode?
+$Serverless \; Framework$ with more than 36\,K GitHub stars and 15\,M 
+downloads satisfies both these criteria. According to a review of Serverless 
+frameworks\cite{kritikos2018review}, the $Serverless \; Framework$ 
+\TODO{why in math mode?}\NEW{I want it to be distinguishable from other serverless 
+	frameworks that we have in the paper in italic and other fonts. 
+	Since the name of the framework is serverless, it can easily be misinterpreted. }
 with the highest number of supported providers 
 and programming languages, and with the advance deployment, testing, 
 monitoring, and security offerings is the most comprehensive existing framework. 
@@ -45,8 +46,16 @@ trend identification, evolution investigation, and performance evaluation.
 First, Wonderless can be used to study several aspects that so far have't
 been considered or have been only marginally touched by researchers, 
 including security of serverless applications and continuous integration.
-TODO: say that to the best of our knowledge there is nothing about security.
-Is it true?
+\TODO{say that to the best of our knowledge there is nothing about security.
+Is it true?}
+\NEW{Almost no. For example:
+\begin{itemize}
+	\item \url{https://www.usenix.org/system/files/conference/hotcloud18/hotcloud18-paper-hong.pdf}
+	\item \url{https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9180214}
+	\item \url{https://arxiv.org/pdf/1802.08984.pdf}
+	\item \url{https://link.springer.com/content/pdf/10.1007/s00450-019-00413-w.pdf}
+\end{itemize}
+}
 %
 Other areas would benefit from a large dataset to test new techniques.
 Recently, Rahman et al.~\cite{DBLP:journals/ese/RahmanFW20} developed a 
@@ -58,11 +67,10 @@ seven serverless applications~\cite{10.5555/3357034.3357059}.
 %
 Second, as Wonderless includes the full history of each serverless application, 
 it give the opportunity to developers to study how serverless computing 
-project evolve over time.
-TODO: cite recent studies on commits in github. It would be interesting to compare the 
-results with analogous studies in Wonderless.
+project evolve over time~\cite{sousa2020characterizing, du2020understanding, wen2020empirical}. 
+It would be interesting to compare the results with analogous studies in Wonderless.
 %
-Finally, Wonderless, with $1,913$ data points, can be used to extend existing 
+Finally, Wonderless, with $1,877$ data points, can be used to extend existing 
 studies along several dimensions. Concerning number of applications,
 studies that have focused on datasets in the order of tens of 
 applications~\cite{eismann2020serverless} can be extended to a much larger scale.
