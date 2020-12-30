@@ -26,10 +26,10 @@ all the related groups.
 
 Wonderless has a total number of $197,993$ files developed in various programming languages. 
 We used CLOC\footnote{\url{https://github.com/AlDanial/cloc}} to count the number of files and 
-lines of code based on each programming language. Table~\ref{tab:pl} demonstrates these numbers 
+lines of code for each programming language. Table~\ref{tab:pl} demonstrates these numbers 
 together with the occurrence of runtimes specified in configuration files of Serverless applications. 
-Based on the applications in the dataset, Nodejs with $\%72.2$ of occurrence is the most popular runtime 
-for Serverless applications.
+Based on the applications in the dataset, Node.js is the most popular runtime 
+for Serverless applications ($\%72.2$ occurrences).
 
 \vspace{-2mm}
 \begin{table}[h]
@@ -52,20 +52,25 @@ for Serverless applications.
 \end{table}
 \vspace{-5mm}
 
-Git history of the applications is included in Wonderless. 
-According to the results extracted using \emph{git log}, there are $374,922$ git commits for all the 
-applications in the dataset. Overall, $13,984$ developers contributed to these applications while 
-more than $\%80$ of the applications have less than five contributors.
+The Git history of the repository is included in Wonderless. 
+According to the results from \emph{git log}, there are $374,922$ git commits in total. 
+Overall, $13,984$ developers contributed to these applications.
+More than $\%48$ of the repositories have at least one 
+GitHub star while more than $\%96$ of them have less than $100$ stars.
+%%
+%\begin{figure}
+%	\centering
+%	\includegraphics[scale=0.3]{figures/topics.png}
+%	\caption{Popular topics in Serverless applications.}
+%	\label{fig:topics}
+%\end{figure}
+%%
+%More than $\%80$ of the applications have less than five contributors.
+%%
+%We extracted the meta-data of repositories using the \emph{mercy-preview} media 
+%type of GitHub API previews. Based on this data, $\%46$ of the repositories have a license 
+%among which $\%67$ are MIT License. Figure~\ref{fig:topics} 
+%represents the distribution of topics with more than ten occurrences in the dataset.
 
-\begin{figure}
-	\centering
-	\includegraphics[scale=0.3]{figures/topics.png}
-	\caption{Popular topics in Serverless applications.}
-	\label{fig:topics}
-\end{figure}
 
-We extracted the meta-data of repositories using the \emph{mercy-preview} media 
-type of GitHub API previews. Based on this data, $\%46$ of the repositories have a license 
-among which $\%67$ are MIT License. More than $\%48$ of the repositories have at least one 
-GitHub star while more than $\%96$ of them have less than $100$ stars. Figure~\ref{fig:topics} 
-represents the distribution of topics with more than ten occurrences in the dataset.
+

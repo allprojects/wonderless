@@ -76,7 +76,7 @@ such as inactive and toy projects. We then applied several rounds
 of filtering to the dataset.
 
 As the first step to elude bias in the dataset, we checked the developers 
-of the applications and removed a repository if the repository was developed 
+of the applications and removed a repository if it was developed 
 by the $Serverless \; Framework$ community. Next, to remove the applications 
 that served just as showcases, we removed a repository if the configuration file 
 of the repository was placed in a directory that contained one of the 
@@ -109,7 +109,7 @@ of the project did not have a new commit a year after the initial one.
 This step dramatically reduced the size of the dataset to $2,364$ 
 repositories.
 
-To eliminate the projects developed for educational reasons, 
+To eliminate educational projects, 
 we applied a keyword search to the labels, topics, and 
 descriptions of repositories. We extracted the description 
 and topics of each repository using the \emph{mercy-preview} media 
@@ -119,7 +119,7 @@ if the repository contained one of the following keywords:
 	course, practice, template, sample, workshop, lecture, study}.
 
 Finally, to avoid duplications, we removed a repository if it was forked 
-or copied from other repositories in the dataset. To do this, we automatically 
+or copied from other repositories in the dataset. To do this, we 
 searched for the projects with the same name and different developers. 
 Then we manually checked if those repositories were actually the same or 
 they accidentally had the same name. If two repositories were the same, 
