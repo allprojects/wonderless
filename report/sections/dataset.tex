@@ -5,7 +5,7 @@
 
 \begin{figure}
 	\centering
-	\includegraphics[scale=0.55]{figures/processOverview}
+	\includegraphics[scale=0.3]{figures/processOverviewFinalgraffle}
 	\caption{Overview of creating Wonderless.}
 	\label{fig:overview}
 \end{figure}
@@ -18,7 +18,7 @@ We will thoroughly describe each of these phases in the following.
 \subsection{Construction of the initial dataset} \label{phaseA}
 
 To construct the initial dataset of Serverless applications, we chose GitHub projects 
-devloped using the $Serverless \; Framework$\footnote{\url{https://www.serverless.com}} 
+devloped using the \emph{Serverless Framework}\,\footnote{\url{https://www.serverless.com}} 
 -- we discuss this decision in section~\ref{discussion}.
 This framework uses a default $serverless.yml$ configuration file, 
 and it allows developers to deploy 
@@ -31,28 +31,6 @@ Depending on the provider, this file can list different properties.
 The example shows the configuration properties for a Telegram bot including 
 name of the provider, runtime of the application, name of the function, 
 and type of the event that triggers the function. 
-
-\vspace{1mm}
-
-\begin{lstlisting}[frame=single, caption=An example of a serverless.yml configuration file., label={lst:example}, captionpos=b]
-service: azure-telegram-bot 
-
-provider:  
-	name: azure
-	runtime: nodejs12.x  
-	
-plugins:  
-	- serverless-azure-functions 
-
-functions:
-	hello:    
-		handler: (*@handler.hello@*)
-		events:   
-			- http: true        
-			   x-azure-settings:          
-			   		authLevel: anonymous
-\end{lstlisting}
-
 
 We used the GitHub API to search for all the $serverless.yml$ files in GitHub. 
 We broke down the query into subqueries based on the size of a file to 
@@ -68,7 +46,26 @@ $30,078$ repositories. Using the URLs, we cloned the main branch
 of repositories to create the initial version of the dataset resulting 
 in $\sim400 \, GB$ of data.
 
+\vspace{2mm}
 
+\begin{lstlisting}[frame=single, caption=An example of a serverless.yml configuration file., label={lst:example}, captionpos=b]
+service: azure-telegram-bot 
+
+provider:  
+		name: azure
+		runtime: nodejs12.x  
+
+plugins:  
+		- serverless-azure-functions 
+
+functions:
+		hello:    
+				handler: (*@handler.hello@*)
+				events:   
+						- http: true        
+								x-azure-settings:          
+										authLevel: anonymous
+\end{lstlisting}
 
 \subsection{Real-world Serverless applications} \label{phaseB}
 The initial dataset includes a number of spurious data points 
@@ -77,7 +74,7 @@ of filtering to the dataset.
 
 As the first step to elude bias in the dataset, we checked the developers 
 of the applications and removed a repository if it was developed 
-by the $Serverless \; Framework$ community. Next, to remove the applications 
+by the \emph{Serverless Framework} community. Next, to remove the applications 
 that served just as showcases, we removed a repository if the configuration file 
 of the repository was placed in a directory that contained one of the 
 \emph{example}, \emph{demo}, \emph{template}, or \emph{test} 

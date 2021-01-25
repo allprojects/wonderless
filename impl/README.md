@@ -3,8 +3,7 @@
 To replicate Wonderless, do the following steps in order:
 1. use `<get_urls.sh>` to query GitHub API for 
   all the serverless.yml configuration files 
-  that are larger than 0.5 KB and smaller 
-  than 10 KB. Please do not forget to add 
+  that are larger than 0.5 KB. Please do not forget to add 
   your GitHub token to the script. The result
   will be saved in a file with *txt* extension.
   
