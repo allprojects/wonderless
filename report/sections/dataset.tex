@@ -11,9 +11,9 @@
 \end{figure}
 
 
-Figure\,\ref{fig:overview} summarizes the  process of constructing Wonderless. 
-The procedure consists of two main phases. 
-We will thoroughly describe each of these phases in the following.
+
+The  process of constructing Wonderless
+consists of two phases, described in the following (Figure\,\ref{fig:overview}).
 
 \subsection{Construction of the initial dataset} \label{phaseA}
 
@@ -25,7 +25,7 @@ and it allows developers to deploy
 applications to cloud providers like AWS, Microsoft Azure, Google Cloud 
 Platform, Apache OpenWhisk, Cloudflare Workers, or a Kubernetes-based 
 solution like Kubeless.
-
+%
 Listing~\ref{lst:example} provides an example of a $serverless.yml$ file. 
 Depending on the provider, this file can list different properties.
 The example shows the configuration properties for a Telegram bot including 
@@ -69,34 +69,37 @@ functions:
 
 \subsection{Real-world Serverless applications} \label{phaseB}
 The initial dataset includes a number of spurious data points 
-such as inactive and toy projects. We then applied several rounds 
+such as inactive and toy projects. For this reason, applied several rounds 
 of filtering to the dataset.
 
-As the first step to elude bias in the dataset, we checked the developers 
+As the first step, to elude bias in the dataset, we checked the developers 
 of the applications and removed a repository if it was developed 
-by the \emph{Serverless Framework} community. Next, to remove the applications 
-that served just as showcases, we removed a repository if the configuration file 
-of the repository was placed in a directory that contained one of the 
-\emph{example}, \emph{demo}, \emph{template}, or \emph{test} 
-keywords in its label.
+by the \emph{Serverless Framework} community. 
+\TODO{GS: how is the filtering happening in practice? Is
+'Serverless Framework' a github user?}
+Next, to filter out the applications 
+that served just as showcases, we removed a repository if its configuration file 
+was in a directory with one of the labels 
+\emph{example}, \emph{demo}, \emph{template}, or \emph{test}.
 
 Then, 
 %we used a python script to make an initial analysis of the 
 %configuration files. We looked for the results of three metrics in this 
 %analysis: 
 we considered \rom{1}) if the configuration file is executable, \rom{2}) if 
-the configuration file has the name of the provider property and 
-\rom{3}) if the configuration file contains the information for any 
+the configuration file has the name of the provider in the 
+\emph{provider} property and 
+\rom{3}) if the configuration file contains the information for at least one 
 function. We removed a repository when the configuration file
-does not meet any of these criteria. 
+does not meet all these criteria. 
 % if its configuration file was not 
 % executable, had no particular provider, or had no specified function.
 %
-By the end of this step, the dataset had $371 \, GB$ of data consisting 
+By the end of this step, the dataset had $371 \, GB$ of data, consisting 
 of $27,812$ unique repositories. 
 
-To eliminate inactive projects, we removed a repositories with a lifetime 
-(difference between the date of the last commit and the date of the first commit)
+To eliminate inactive projects, we removed the repositories with a lifetime 
+(difference between the date of the last and of the first commit)
 less than a year. 
 % We used $git \; log$ to view the commit history of repositories. 
 Figure~\ref{fig:overview} demonstrates the lifetime distribution of the 

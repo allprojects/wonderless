@@ -7,6 +7,7 @@ The steps in Section~\ref{dataset} led to the construction of the
 Wonderless Serverless computing dataset, consisting of $1,877$
 real-world Serverless applications worthing $44 \, GB$ of data. 
 
+\TODO{Something broken in the next sentence?}
 First, a CSV file that contains the URL of each repository. 
 With this format one can clone the latest version of the repositories any time. 
 On the negative side, the repositories can change access to private, 
@@ -17,19 +18,23 @@ To overcome these issues, we provide a snapshot of the
 repositories taken on November 8, 2020. 
 In the snapshot, each repository is assigned a directory named `$a\_b$' 
 where `$a$' is the GitHub username of the developer and `$b$' is the name of the repository. 
-The directories are categorized into seven parts based on the provider of the applications, 
+The directories are categorized into seven groups based on the provider of the application, 
 retrieved from the $serverless.yml$ configuration file. 
-The categories are AWS, Azure, Google, OpenWhisk, Cloudflare, Kubeless, 
-and Other(for providers supporting less than three applications in the dataset).
-If an application used multiple providers, we placed the repository across 
+The categories are \emph{AWS}, \emph{Azure}, \emph{Google}, \emph{OpenWhisk}, 
+\emph{Cloudflare}, \emph{Kubeless}, 
+and \emph{Other} (for providers supporting less than three applications in the dataset).
+If an application used multiple providers, we placed the repository in 
 all the related groups. 
 
-Wonderless has a total number of $197,993$ files developed in various programming languages. 
+Wonderless comprises $197,993$ files developed in various programming languages. 
 We used CLOC\footnote{\url{https://github.com/AlDanial/cloc}} to count the number of files and 
-lines of code for each programming language. Table~\ref{tab:pl} presents an overview, 
-including the occurrence of runtimes specified in configuration files of Serverless applications. 
-Based on the applications in the dataset, Node.js is the most popular runtime 
-for Serverless applications ($\%72.2$ occurrences).
+lines of code for each language. Table~\ref{tab:pl} presents an overview, 
+including the occurrence of the runtimes specified in the configuration files of the Serverless applications. 
+% Based on the applications in the dataset, 
+Node.js is the most popular runtime 
+%for Serverless applications 
+($\%72.2$ occurrences).
+\TODO{Percentage symbol after the number?}
 
 \vspace{-2mm}
 \begin{table}[h]
@@ -52,11 +57,11 @@ for Serverless applications ($\%72.2$ occurrences).
 \end{table}
 \vspace{-5mm}
 
-The Git history of the repository is included in Wonderless. 
-According to the results from \emph{git log}, there are $374,922$ git commits in total. 
+Wonderless includes the Git history of each repository. 
+According to the results from \emph{git log}, there are $374,922$ commits in total. 
 Overall, $13,984$ developers contributed to these applications.
 More than $\%48$ of the repositories have at least one 
-GitHub star while more than $\%96$ of them have less than $100$ stars.
+GitHub star, more than $\%96$ have less than $100$ stars.
 %%
 %\begin{figure}
 %	\centering
