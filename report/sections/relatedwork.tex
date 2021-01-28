@@ -4,18 +4,15 @@
 \label{relatedwork}
 
 \subsection{Related datasets}
-Eismann et al. in \cite{eismann2020serverless} analyze
-$32$ open-source projects. These projects are a subset of 
-an existing dataset containing $2,194$ repositories introduced by 
-Pavlov et al.\cite{pavlov2019serverless}. The initial dataset was extracted 
-from GitHub using GHTorrent based on keyword search and repositories' 
-creation date. Eismann et al. applied several additional filters to this dataset 
-to take out active and real-world Serverless applications resulting in only $32$
-projects. These filters are based on the number of files, commits, 
-contributors, and watchers of the projects, along with the manual walks 
-through the repositories. Wonderless extends and complements 
-this dataset by adding a large number of Serverless applications that 
-have been collected fully automatically.
+Eismann et al.~\cite{eismann2020serverless} analyze
+32 open-source projects. These projects are a subset of 
+an existing dataset introduced by Pavlov et al.~\cite{pavlov2019serverless}. 
+The initial dataset was extracted from GitHub using GHTorrent based on keyword 
+search and repositories' creation date. Eismann et al. applied several additional 
+filters to this dataset to take out active and real-world Serverless applications 
+resulting in only 32 projects. These filters are based on the number of files, commits, 
+contributors, and watchers of the projects, along with the manual inspection of 
+the repositories.
 
 The Amazon Web Services Serverless Application Repository
 (AWS SAR)\footnote{\url{https://aws.amazon.com/serverless/serverlessrepo/}} 
@@ -28,7 +25,7 @@ AWS verified authors.
 
 \subsection{Studies on Serverless computing}
 
-With the increasing popularity of \faas platforms and Serverless applications, 
+With the increasing popularity of Serverless applications, 
 more and more studies have been conducted on a broad range of topics in 
 Serverless computing. 
 
@@ -36,9 +33,10 @@ Serverless computing.
 Eismann et al.~\cite{eismann2020serverless} provide a  
 high-level picture of Serverless computing, including 
 company adoption, suitable application context, and implementation 
-of serverless applications.
-In the study, the authors analyze 89 Serverless applications from open-source projects, 
-industrial sources, academic literature, and scientific computing. 
+of Serverless applications.
+In the study, the authors analyze 32 open-source Serverless projects 
+along with 57 Serverless sources including industrial sources, academic literature, 
+and scientific computing. 
 
 
 Leitner et al.~\cite{leitner2019mixed} present the results of a mixed-method 
@@ -57,17 +55,17 @@ extraction, mining and conflation of repositories in AWS SAR.
 
 
 Several studies~\cite{wang2018peeking,lloyd2018serverless,figiela2018performance,lee2018evaluation,mcgrath2017serverless,back2018using,mohanty2018evaluation} 
-have evaluated the performance of popular \faas solutions by running 
-benchmark functions across different platforms. The metrics include time, 
-memory, network, and I/O. Another class of studies investigates the cost of \faas platforms 
+have evaluated the performance of popular Serverless solutions by running 
+benchmark functions across platforms. The metrics include time, 
+memory, network, and I/O. Another class of studies investigates the cost of Serverless platforms 
 based on different utilization metrics. Lenarduzzi and Panichella~\cite{adzic2017serverless} 
 study the migration of two industrial cases of early adopters
 and show how Lambda deployment architectures reduces hosting costs. 
 Jackson and Clynch~\cite{jackson2018investigation} study the impact of 
 language runtime on the cost of Serverless functions in AWS Lambda and 
 Azure Functions. Bortolini and Obelheiro~\cite{bortolini2019investigating} 
-investigate the cost variations within and across \faas platforms 
-based on memory allocation, \faas provider, and 
+investigate the cost variations within and across Serverless platforms 
+based on memory allocation, provider, and 
 programming language. 
 % Wonderless with the feature of spanning across 
 % all the popular vendors and platforms, provides valid case studies for 

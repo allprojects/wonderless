@@ -1,6 +1,6 @@
 % !TEX root = ../main.tex
 
-\section{Creating the Wonderless}
+\section{Creating Wonderless}
 \label{dataset}
 
 \begin{figure}
@@ -10,44 +10,25 @@
 	\label{fig:overview}
 \end{figure}
 
-
-
 The  process of constructing Wonderless
-consists of two phases, described in the following (Figure\,\ref{fig:overview}).
+consists of two phases, described in the following (Figure~\ref{fig:overview}).
 
 \subsection{Construction of the initial dataset} \label{phaseA}
 
 To construct the initial dataset of Serverless applications, we chose GitHub projects 
-devloped using the \emph{Serverless Framework}\,\footnote{\url{https://www.serverless.com}} 
+devloped using the \emph{Serverless Framework}\footnote{\url{https://www.serverless.com}} 
 -- we discuss this decision in section~\ref{discussion}.
-This framework uses a default $serverless.yml$ configuration file, 
+This framework uses a default YAML configuration file, named $serverless.yml$, 
 and it allows developers to deploy 
 applications to cloud providers like AWS, Microsoft Azure, Google Cloud 
 Platform, Apache OpenWhisk, Cloudflare Workers, or a Kubernetes-based 
-solution like Kubeless.
-%
-Listing~\ref{lst:example} provides an example of a $serverless.yml$ file. 
+solution like Kubeless. Listing~\ref{lst:example} provides an example of a $serverless.yml$ file. 
 Depending on the provider, this file can list different properties.
 The example shows the configuration properties for a Telegram bot including 
 name of the provider, runtime of the application, name of the function, 
 and type of the event that triggers the function. 
 
-We used the GitHub API to search for all the $serverless.yml$ files in GitHub. 
-We broke down the query into subqueries based on the size of a file to 
-overcome the limit of $1000$ results per query.
-%Due to this, we searched for all the $serverless.yml$ files that are larger 
-%than $0.5\,KB$ and smaller than $10\,KB$. The files with less than 
-We discarded files smaller than $0.5\,KB$ which are mostly empty.
-% and there are barely such files that are 
-%larger than $10\,KB$. 
-As the result of our search on July 29, 2020, 
-we collected the URL of $41,862$ unique files, corresponded to 
-$30,078$ repositories. Using the URLs, we cloned the main branch 
-of repositories to create the initial version of the dataset resulting 
-in $\sim400 \, GB$ of data.
-
-\vspace{2mm}
-
+\begin{minipage}{\linewidth}
 \begin{lstlisting}[frame=single, caption=An example of a serverless.yml configuration file., label={lst:example}, captionpos=b]
 service: azure-telegram-bot 
 
@@ -66,17 +47,32 @@ functions:
 								x-azure-settings:          
 										authLevel: anonymous
 \end{lstlisting}
+\end{minipage}
+
+\vspace{2mm}
+
+We used the GitHub API to search for all the $serverless.yml$ files in GitHub. 
+%We broke down the query into subqueries based on the size of a file to 
+%overcome the limit of $1000$ results per query.
+%Due to this, we searched for all the $serverless.yml$ files that are larger 
+%than $0.5\,KB$ and smaller than $10\,KB$. The files with less than 
+We discarded files smaller than 0.5 KB which are mostly empty.
+% and there are barely such files that are 
+%larger than $10\,KB$. 
+As the result of our search on July 29, 2020, 
+we collected the URLs of 41,862 unique files, corresponded to 
+30,078 repositories. We cloned the main branch of each repositories to 
+create the initial version of the dataset resulting in about 400 GB of data.
 
 \subsection{Real-world Serverless applications} \label{phaseB}
 The initial dataset includes a number of spurious data points 
-such as inactive and toy projects. For this reason, applied several rounds 
-of filtering to the dataset.
+such as inactive and toy projects. For this reason, we applied 
+several rounds of filtering to the dataset.
 
-As the first step, to elude bias in the dataset, we checked the developers 
-of the applications and removed a repository if it was developed 
-by the \emph{Serverless Framework} community. 
-\TODO{GS: how is the filtering happening in practice? Is
-'Serverless Framework' a github user?}
+As the first step, to remove bias in the dataset, we removed a 
+repository if it was developed by the \emph{Serverless Framework} community. 
+This was done by checking if the application was developed by the \emph{serverless} 
+or \emph{serverless-components} GitHub usernames.
 Next, to filter out the applications 
 that served just as showcases, we removed a repository if its configuration file 
 was in a directory with one of the labels 
@@ -95,25 +91,25 @@ does not meet all these criteria.
 % if its configuration file was not 
 % executable, had no particular provider, or had no specified function.
 %
-By the end of this step, the dataset had $371 \, GB$ of data, consisting 
-of $27,812$ unique repositories. 
+At the end of this step, the dataset had 371 GB of data, consisting 
+of 27,812 unique repositories. 
 
-To eliminate inactive projects, we removed the repositories with a lifetime 
+To eliminate unstable projects, we removed the repositories with a lifetime 
 (difference between the date of the last and of the first commit)
-less than a year. 
+of less than a year. 
 % We used $git \; log$ to view the commit history of repositories. 
 Figure~\ref{fig:overview} demonstrates the lifetime distribution of the 
-projects in the dataset: more than $70\%$ of the projects 
-were active for less than a month. Overall, more than $90\%$ 
+projects in the dataset: more than 70\% of the projects 
+were active for less than a month. Overall, more than 90\% 
 of the project did not have a new commit a year after the initial one. 
-This step dramatically reduced the size of the dataset to $2,364$ 
+This step dramatically reduced the size of the dataset to 2,364 
 repositories.
 
-To eliminate educational projects, 
+To remove educational projects, 
 we applied a keyword search to the labels, topics, and 
 descriptions of repositories. We extracted the description 
 and topics of each repository using the \emph{mercy-preview} media 
-type of GitHub API previews. We removed a repository 
+type provided by GitHub API. We removed a repository 
 if the repository contained one of the following keywords: 
 \emph{example, demo, tutorial, playground, learn, teach, exercise, 
 	course, practice, template, sample, workshop, lecture, study}.
@@ -123,7 +119,8 @@ or copied from other repositories in the dataset. To do this, we
 searched for the projects with the same name and different developers. 
 Then we manually checked if those repositories were actually the same or 
 they accidentally had the same name. If two repositories were the same, 
-we removed the one with fewer commits or fewer contributors.
+we removed the one with fewer commits. If the number of commits were 
+also the same, we removed the one with fewer contributors.
 
 
 

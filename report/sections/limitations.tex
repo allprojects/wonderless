@@ -7,22 +7,21 @@
 %However, in the process, we made a few choices that can impact the dataset. 
 %
 
-First, we limited the dataset to public projects available in GitHub. As of December 2020, 
-GitHub with more than 64\,M\,\footnote{\url{https://github.com/search}} 
-developers and 36\,M\,\footnote{\url{https://github.com/search?q=is:public}} public 
-repositories, is home for the largest open-source communities. 
-We believe that such communities are 
-% comprehensively 
-representative of 
+First, we limited the dataset to public projects available in GitHub; 
+Nevertheless, we believe that such projects are representative of 
 how Serverless computing is adopted in practice.
+As of December 2020, 
+GitHub with more than 64 M\footnote{\url{https://github.com/search}} 
+developers and 36 M\footnote{\url{https://github.com/search?q=is:public}} public 
+repositories, is the home for the largest open-source communities. 
 %
 
 Second, Wonderless is restricted to the applications 
-developed with the \emph{Serverless Framework}. 
+developed with \emph{Serverless Framework}; 
 However, not every developer uses a framework to program Serverless applications. 
 They may directly use a provider, or they may adopt self-hosted solutions. 
 %
-As discussed in section\,\ref{phaseA}, the \emph{Serverless Framework} is the 
+As discussed in section~\ref{discOnSF}, \emph{Serverless Framework} is the 
 most popular open-source solution for Serverless applications -- 
 based on GitHub stars and the results of a prior study~\cite{kritikos2018review}. 
 Hence, we believe that the issue above does not significantly diminish 
@@ -33,7 +32,7 @@ Another issue is that the filtering procedure may not have removed all
 uninteresting cases, including toy software and stub applications.
 To this end, we randomly selected 1\% of the projects, 
 and we manually checked them. 
-Only one of the projects was using a template from Serverless framework, 
+Only one of the eighteen projects was using a template from \emph{Serverless Framework}, 
 and other projects were active Serverless applications.
 
 

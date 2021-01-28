@@ -3,40 +3,37 @@
 \section{Discussion}
 \label{discussion}
 
-\subsection{Identifying Serverless applications}
+\subsection{Identifying Serverless applications} \label{discOnSF}
 The starting point for constructing the Wonderless is identifying Serverless 
 applications. We discuss two alternatives to our approach.
 
-First, one can use services like GHTorrent\cite{gousios2012ghtorrent}, 
+First, one can use services like GHTorrent~\cite{gousios2012ghtorrent}, 
 an offline mirror of the GitHub public event timeline, to search for repositories 
 that contain specific keywords in their descriptions, topics, commits or other 
 related attributes. Yet, the presence of a keyword does not guarantee 
 that an application is Serverless. Analogously, an application may be Serverless 
 without containing a specific keyword in the repository attributes.
+Our approach is more precise in these regards, 
+but it is limited to a specific framework. 
+\emph{Serverless Framework} is widely used with more than 36 K GitHub stars 
+and 15 M downloads. According to a review of Serverless 
+frameworks~\cite{kritikos2018review}, \emph{Serverless Framework},
+with the highest number of supported providers 
+and programming languages, and with the deployment, testing, 
+monitoring, and security offerings is the most comprehensive existing framework. 
 
 Second, one can search for a configuration file that is 
 specific to Serverless applications in the GitHub API. Unfortunately, to consider several vendors, 
 one needs to find specific configuration files for each provider.
-Worse, the serverless configuration files are hardly distinguishable from other cloud setups. 
+Worse, the Serverless configuration files are hardly distinguishable from other cloud setups. 
 For example, one of the default Serverless configuration files in Amazon 
-Web Services\,(AWS) is $index.js$. To date\footnote{\today}, 
-more than $135 \, M$ files with this name are on GitHub, most not 
+Web Services~(AWS) is $index.js$. On January 28, 2021, there were 
+more than 202 M files with this name on GitHub, most not 
 related to Serverless applications. 
-% This procedure can lead to a massive dataset with a large number 
-% of unrelated data points.
-
 In our approach, instead, we rely on a configuration file that is exclusively 
 for Serverless applications, and has the same default name across 
-different cloud providers and Serverless platforms. 
-\emph{Serverless Framework} with more than 36\,K GitHub stars and 15\,M 
-downloads satisfies both these criteria. According to a review of Serverless 
-frameworks\cite{kritikos2018review}, the \emph{Serverless Framework},
-with the highest number of supported providers 
-and programming languages, and with the advance 
-\TODO{Advance?}
-deployment, testing, 
-monitoring, and security offerings is the most comprehensive existing framework. 
-
+different providers and platforms. \emph{Serverless Framework} 
+satisfies both these criteria.
 
 \subsection{Use cases for Wonderless}
 We envision using Wonderless in future studies 
@@ -44,15 +41,14 @@ concerning different directions.
 % as a data source for characteristic recognition, 
 % trend identification, evolution investigation, and performance evaluation.
 
-First, Wonderless can be used to study several aspects that so far have't
+First, Wonderless can be used to study several aspects that so far have not
 been considered or have been only marginally touched by researchers.
 %including security of serverless applications and continuous integration.
 For example, to the best of our knowledge, there is no comprehensive 
-empirical analysis of security of serverless applications. 
+empirical analysis of security of Serverless applications. 
 As a starting point, Hong at al.~\cite{216833} proposed a catalogue of
-security patterns for serverless computing which could be used to assess
-the security design of the application in  Wonderless.
-
+security patterns for Serverless computing which could be used to assess
+the security design of the applications in Wonderless.
 
 %\TODO{say that to the best of our knowledge there is nothing about security.
 %Is it true?}
@@ -65,27 +61,26 @@ the security design of the application in  Wonderless.
 %\end{itemize}
 %}
 %
-Other areas would benefit from a large dataset to test new techniques.
 Recently, Rahman et al.~\cite{DBLP:journals/ese/RahmanFW20} developed a 
-catalogue of antipatterns for Infrastructure as Code. We believe that an analogous 
-study would be greatly beneficial in the context of serverless software.
+catalogue of antipatterns for Infrastructure as Code. We believe that an 
+analogous study of antipatterns for Serverless computing would be beneficial.
 Similarly, Obetz et al. have proposed a novel static analysis technique that is  
-specific to serverless computing and they demonstrated it on 
-seven serverless applications~\cite{10.5555/3357034.3357059}.
-%
-Second, as Wonderless includes the full history of each serverless application, 
-it give the opportunity to developers to study how serverless computing 
-project evolve over time~\cite{sousa2020characterizing, du2020understanding, wen2020empirical}. 
+specific to Serverless computing and they demonstrated it on 
+seven Serverless applications~\cite{10.5555/3357034.3357059}.
+
+Second, as Wonderless includes the full history of each Serverless application, 
+it provides developers the opportunity to study how Serverless computing 
+projects evolve over time~\cite{sousa2020characterizing, du2020understanding, wen2020empirical}. 
 It would be interesting to compare the results with analogous studies in Wonderless.
-%
-Finally, Wonderless, with $1,877$ data points, can be used to extend existing 
+
+Finally, Wonderless, with 1,877 data points, can be used to extend existing 
 studies along several dimensions. Concerning number of applications,
 studies that have focused on datasets in the order of tens of 
 applications~\cite{eismann2020serverless} can be extended to a much larger scale.
 Along the methodology axes, Wonderless can be used to complement the knowledge collected 
 with surveys, and developer interviews with first-hand analysis of
-serverless applications~\cite{leitner2019mixed}.
-Along the technology exes, since Wonderless does not focus on a specific vendor, it can be used
+Serverless applications~\cite{leitner2019mixed}.
+Along the technology axes, since Wonderless does not focus on a specific vendor, it can be used
 to discover whether existing analyses carried out for one vendor
 generalize to others~\cite{spillner2019quantitative}.
 
